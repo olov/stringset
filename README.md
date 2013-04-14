@@ -9,7 +9,7 @@ Works in node and browsers.
 Available in `examples.js`
 
 ```javascript
-var StringSet = require("./stringset");
+var StringSet = require("stringset");
 
 var ss1 = new StringSet();
 ss1.add("greeting");
@@ -45,7 +45,7 @@ var StringSet = require("stringset");
 ```
 
 ### Browser
-Clone the repo, include it in a script tag. You may want an ES5 polyfill.
+Clone the repo and include it in a script tag
 
     git clone https://github.com/olov/stringset.git
 
