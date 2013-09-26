@@ -96,7 +96,7 @@ var StringSet = (function() {
         }
     };
 
-    stringset.prototype['delete'] = function(item) {
+    stringset.prototype.remove = function(item) {
         if (typeof item !== "string") {
             throw new Error("StringSet expected string item");
         }
@@ -108,6 +108,12 @@ var StringSet = (function() {
         }
         return didExist;
     };
+
+    // alias remove to delete but beware:
+    // ss.delete("key"); // OK in ES5 and later
+    // ss['delete']("key"); // OK in all ES versions
+    // ss.remove("key"); // OK in all ES versions
+    stringset.prototype['delete'] = stringset.prototype.remove;
 
     stringset.prototype.isEmpty = function() {
         for (var item in this.obj) {

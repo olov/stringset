@@ -6,7 +6,7 @@ ss1.add("check");
 ss1.add("__proto__");
 console.log(ss1.has("greeting")); // true
 console.log(ss1.has("__proto__")); // true
-ss1.delete("greeting");
+ss1.remove("greeting");
 console.log(ss1.items()); // [ 'check', '__proto__' ]
 console.log(ss1.toString()); // {"check","__proto__"}
 

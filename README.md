@@ -3,6 +3,12 @@ A fast and robust stringset implementation that can hold any string items,
 including `__proto__`, with minimal overhead compared to a plain object.
 Works in node and browsers.
 
+The API is created to be as close to the ES6 Set API as possible. Prefer
+`ss.remove("key")` for deleting a key. ES6 Set uses `set.delete("key")`
+instead and for that reason `ss['delete']("key")` is available as a
+stringset alias as well. Never do `ss.delete("key")` unless you're
+certain to be in the land of ES5 or later.
+
 
 
 ## Examples
@@ -17,7 +23,7 @@ ss1.add("check");
 ss1.add("__proto__");
 console.log(ss1.has("greeting")); // true
 console.log(ss1.has("__proto__")); // true
-ss1.delete("greeting");
+ss1.remove("greeting");
 console.log(ss1.items()); // [ 'check', '__proto__' ]
 console.log(ss1.toString()); // {"check","__proto__"}
 
